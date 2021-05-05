@@ -30,6 +30,7 @@ const canvasDiv=document.querySelector('#canvas')
 function setup(){
   /* Set the canvas to be under the element #canvas*/
   const canvas = createCanvas(canvasDiv.offsetWidth, canvasDiv.offsetWidth/4*3);
+  
   canvas.parent(document.querySelector('#canvas'));
   
 
@@ -109,7 +110,7 @@ function generate() {
 }
 
 function draw() {
-    background('#ff9900');
+    background('#ffffff');
 
     if(keyBoard() == false) {
         generate();
@@ -125,7 +126,7 @@ function draw() {
                 fill(255, 0, 0);
             }else 
                 fill(0);     
-            // stroke(strokeColor);
+            stroke(strokeColor);
             // noStroke();
             rect(i * unitLength, j * unitLength, unitLength, unitLength); 
         }
@@ -150,7 +151,7 @@ function mouseDragged() {
   currentBoard[x][y] = 1;
   fill(boxColor2);
   stroke(strokeColor)
-  noStroke()
+  //noStroke()
   rect(x * unitLength, y * unitLength, unitLength, unitLength);
 }
 
@@ -264,3 +265,7 @@ document.querySelector('.pattern').addEventListener('click', function() {
          }  
     }          
 })
+
+// doxument.querySelector('.label-color').addEventListener('click', function() {
+//     alert("1234")
+// })
